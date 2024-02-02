@@ -21,6 +21,10 @@ export const MuiSelect = () => {
             SelectProps={{
                 multiple: true,
             }}
+            error
+            size="small"
+            helperText = 'Enter the countries here'
+            color="secondary"
         >
             <MenuItem value="SL">Sri Lanka</MenuItem>
             <MenuItem value="CA">Canada</MenuItem>
