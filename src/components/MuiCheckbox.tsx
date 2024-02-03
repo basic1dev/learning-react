@@ -1,12 +1,21 @@
 import { Box, FormControlLabel, Checkbox } from "@mui/material";
 import { useState } from 'react';
 
+import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
+import BookmarkIcon from "@mui/icons-material/Bookmark";
+
+
+
+
 export const MuiCheckbox = () => {
-  const [acceptTnC, setAcceptTnC] = useState(false)
-  console.log({ acceptTnC })
+
+  const [acceptTnC, setAcceptTnC] = useState(false);
+
+  console.log({ acceptTnC });
+
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setAcceptTnC(event.target.checked)
-  }
+    setAcceptTnC(event.target.checked);
+  };
 
 
   return (
@@ -16,6 +25,13 @@ export const MuiCheckbox = () => {
             label='I accept terms and conditions' 
             control={<Checkbox checked={acceptTnC} onChange={handleChange}/>}/>
         </Box>
+        <Box>
+          <Checkbox 
+          icon={<BookmarkBorderIcon />} 
+          checkedIcon={<BookmarkIcon />}
+          checked={acceptTnC}
+          onChange={handleChange}/>
+        </Box>
     </Box>
   )
-}
+};
